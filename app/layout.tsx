@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./globals.css";
+import MainNav from "./components/MainNav";
 
 export const metadata = {
   title: "Posts App",
@@ -15,19 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <section>
-          <nav className="m-4">
-            <ul className="flex justify-between">
-              <li>
-                <Link href="/">PostsApp</Link>
-              </li>
-              <li className="flex gap-4">
-                <Link href="/posts/new">NewPost</Link>
-                <Link href="/posts">Posts</Link>
-                <Link href="/profile">Profile</Link>
-              </li>
-            </ul>
-          </nav>
-
+          <MainNav />
+        </section>
+        <section className="flex justify-center flex-col text-center w-full h-full">
           {children}
         </section>
       </body>
