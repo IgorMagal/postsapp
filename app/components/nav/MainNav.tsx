@@ -9,7 +9,8 @@ import {
 } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
-import Login from "./Login";
+import Login from "../../auth/Login";
+import AppLogo from "./AppLogo";
 
 const MainNav: React.FC<{}> = () => {
   //   const { user, googleSignIn, logout } = UserAuth();
@@ -41,45 +42,9 @@ const MainNav: React.FC<{}> = () => {
     </Link>
   );
 
-  const logoutBtn = (
-    <button
-      onClick={() => {
-        handleMenuToggle();
-      }}
-      type="button"
-      className="bg-neutral-700 shadow-2xl w-full hover:bg-neutral-500 justify-around text-white font-semibold py-2 px-4 sm:px-2 mr-4 rounded flex items-center"
-    >
-      <MdLogout size={30} />
-      <p>Logout</p>
-    </button>
-  );
-
-  const profileLink = (
-    <Link
-      onClick={() => handleMenuToggle()}
-      href={"profile"} //`/profile/${user?.uid}`
-      className="bg-neutral-700 shadow-2xl w-full justify-around hover:bg-neutral-500 text-white font-semibold py-2 px-4 sm:px-2 mr-4  rounded flex items-center"
-    >
-      <MdOutlinePerson size={30} />
-      Profile
-    </Link>
-  );
-
-  const appLogo = (
-    <Link
-      href="/"
-      className="flex cursor-pointer align-middle justify-center items-center min-h-[50px]"
-    >
-      <MdMessage size={40} />
-      <p className="xs:text-lg sm:text-lg md:text-2xl text-3xl font-bold">
-        osts App
-      </p>
-    </Link>
-  );
-
   return (
     <nav className="fixed bg-opacity-50 py-2 pb-2 top-0 left-0 right-0 flex justify-between px-10 xs:px-4 items-center bg-neutral-800 border-b-neutral-300 border-b-2 z-10">
-      {appLogo}
+      <AppLogo />
       <ul className="flex gap-4 items-center relative">
         <li>{postBoardBtn}</li>
         <li>
@@ -91,6 +56,29 @@ const MainNav: React.FC<{}> = () => {
   );
 
   function UserMenu() {
+    const logoutBtn = (
+      <button
+        onClick={() => {
+          handleMenuToggle();
+        }}
+        type="button"
+        className="bg-neutral-700 shadow-2xl w-full hover:bg-neutral-500 justify-around text-white font-semibold py-2 px-4 sm:px-2 mr-4 rounded flex items-center"
+      >
+        <MdLogout size={30} />
+        <p>Logout</p>
+      </button>
+    );
+
+    const profileLink = (
+      <Link
+        onClick={() => handleMenuToggle()}
+        href={"profile"} //`/profile/${user?.uid}`
+        className="bg-neutral-700 shadow-2xl w-full justify-around hover:bg-neutral-500 text-white font-semibold py-2 px-4 sm:px-2 mr-4  rounded flex items-center"
+      >
+        <MdOutlinePerson size={30} />
+        Profile
+      </Link>
+    );
     return (
       <div
         onClick={() => setShowMenu(false)}
