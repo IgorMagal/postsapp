@@ -9,6 +9,7 @@ import {
 } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
+import Login from "./Login";
 
 const MainNav: React.FC<{}> = () => {
   //   const { user, googleSignIn, logout } = UserAuth();
@@ -79,14 +80,10 @@ const MainNav: React.FC<{}> = () => {
   return (
     <nav className="fixed bg-opacity-50 py-2 pb-2 top-0 left-0 right-0 flex justify-between px-10 xs:px-4 items-center bg-neutral-800 border-b-neutral-300 border-b-2 z-10">
       {appLogo}
-      <ul className="flex gap-2 items-center relative">
+      <ul className="flex gap-4 items-center relative">
         <li>{postBoardBtn}</li>
         <li>
-          <MdOutlinePerson
-            onClick={() => {}}
-            size={40}
-            className="cursor-pointer border-2 border-neutral-50 text-white hover:bg-neutral-600 rounded-full"
-          />
+          <Login />
         </li>
         {showMenu && UserMenu()}
       </ul>
