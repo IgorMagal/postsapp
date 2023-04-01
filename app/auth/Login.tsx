@@ -1,3 +1,5 @@
+"use client";
+
 import { signIn } from "next-auth/react";
 import { MdOutlinePerson } from "react-icons/md";
 

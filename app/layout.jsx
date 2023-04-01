@@ -1,17 +1,14 @@
 import "./globals.css";
 import MainNav from "./components/nav/MainNav";
 import AuthContext from "./auth/AuthContext";
+import Nav from "./components/nav/Nav";
 
 export const metadata = {
   title: "Posts App",
   description: "A simple app to manage posts created by Igor Magalhaes",
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
