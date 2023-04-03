@@ -1,12 +1,13 @@
 "use client";
 
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { MdLogout, MdOutlinePerson } from "react-icons/md";
 
-const UserMenu: React.FC = () => {
+const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
   const logoutBtn = (
     <button
-      onClick={() => {}}
+      onClick={() => signOut()}
       type="button"
       className="bg-neutral-700 shadow-2xl w-full hover:bg-neutral-500 justify-around text-white font-semibold py-2 px-4 sm:px-2 mr-4 rounded flex items-center"
     >
@@ -17,7 +18,6 @@ const UserMenu: React.FC = () => {
 
   const profileLink = (
     <Link
-      onClick={() => {}}
       href={"profile"} //`/profile/${user?.uid}`
       className="bg-neutral-700 shadow-2xl w-full justify-around hover:bg-neutral-500 text-white font-semibold py-2 px-4 sm:px-2 mr-4  rounded flex items-center"
     >
@@ -27,7 +27,7 @@ const UserMenu: React.FC = () => {
   );
   return (
     <div
-      onClick={() => {}}
+      onClick={() => closeModal()}
       className="fixed inset-0 z-40 bg-neutral-200 bg-opacity-0"
     >
       <div
@@ -42,3 +42,5 @@ const UserMenu: React.FC = () => {
     </div>
   );
 };
+
+export default UserMenu;

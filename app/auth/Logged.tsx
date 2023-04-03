@@ -3,15 +3,23 @@
 import Image from "next/image";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import UserMenu from "../components/nav/UserMenu";
+import { useState } from "react";
 
 type User = {
   image: string;
 };
 
 export default function Logged({ image }: User) {
+  const handleModal = () => {
+    setUserMenu(false);
+  };
+
+  const [userMenu, setUserMenu] = useState(false);
   return (
-    <Link href={"/"}>
+    <li>
       <Image
+        onClick={() => setUserMenu(true)}
         width={40}
         height={40}
         className="w-14 rounded-full"
@@ -19,6 +27,7 @@ export default function Logged({ image }: User) {
         alt=""
         priority
       />
-    </Link>
+      {userMenu && <UserMenu closeModal={handleModal} />}
+    </li>
   );
 }
