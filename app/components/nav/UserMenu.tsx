@@ -18,7 +18,7 @@ const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
 
   const profileLink = (
     <Link
-      href={"profile"} //`/profile/${user?.uid}`
+      href={"profile"}
       className="bg-neutral-700 shadow-2xl w-full justify-around hover:bg-neutral-500 text-white font-semibold py-2 px-4 sm:px-2 mr-4  rounded flex items-center"
     >
       <MdOutlinePerson size={30} />
@@ -31,8 +31,8 @@ const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
       className="fixed inset-0 z-40 bg-neutral-200 bg-opacity-0"
     >
       <div
-        onMouseLeave={() => closeModal()}
-        className="border-neutral-900 border-2 absolute right-0 top-[70px] z-50 bg-neutral-100 shadow-lg px-1 py-1 rounded-md min-w-[150px] "
+        // onMouseLeave={() => closeModal()}
+        className="border-neutral-900 border-2 absolute right-2 top-[50px] z-50 bg-neutral-100 shadow-lg px-1 py-1 rounded-md min-w-[150px] "
       >
         <div className="flex flex-col items-center gap-2 w-full m-2 justify-around">
           {profileLink}

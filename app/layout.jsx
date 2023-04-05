@@ -1,7 +1,6 @@
 import "./globals.css";
 import MainNav from "./components/nav/MainNav";
 import AuthContext from "./auth/AuthContext";
-import Nav from "./components/nav/Nav";
 
 export const metadata = {
   title: "Posts App",

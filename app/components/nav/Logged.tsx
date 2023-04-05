@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { signOut } from "next-auth/react";
-import Link from "next/link";
-import UserMenu from "../components/nav/UserMenu";
+import UserMenu from "./UserMenu";
 import { useState } from "react";
 
 type User = {
@@ -22,9 +20,9 @@ export default function Logged({ image }: User) {
         onClick={() => setUserMenu(true)}
         width={40}
         height={40}
-        className="w-14 rounded-full"
+        className="rounded-full border-2 border-neutral-100"
         src={image}
-        alt=""
+        alt="User image"
         priority
       />
       {userMenu && <UserMenu closeModal={handleModal} />}
