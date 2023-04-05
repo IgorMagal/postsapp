@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { MdLogout, MdOutlinePerson } from "react-icons/md";
 
-const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
+function UserMenu({ closeModal }: { closeModal: () => void }) {
   const logoutBtn = (
     <button
       onClick={() => signOut()}
@@ -27,7 +27,10 @@ const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
   );
   return (
     <div
-      onClick={() => closeModal()}
+      onClick={() => {
+        console.log("Mouse leave event fired");
+        closeModal();
+      }}
       className="fixed inset-0 z-40 bg-neutral-200 bg-opacity-0"
     >
       <div
@@ -41,6 +44,6 @@ const UserMenu: React.FC<{ closeModal: () => void }> = ({ closeModal }) => {
       </div>
     </div>
   );
-};
+}
 
 export default UserMenu;
