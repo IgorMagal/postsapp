@@ -35,7 +35,7 @@ function UserMenu({ closeModal }: { closeModal: () => void }) {
     >
       <div
         // onMouseLeave={() => closeModal()}
-        className="border-neutral-900 border-2 absolute right-2 top-[50px] z-50 bg-neutral-100 shadow-lg px-1 py-1 rounded-md min-w-[150px] "
+        className="border-neutral-900 border-2 absolute right-2 top-[64px] z-50 bg-neutral-100 shadow-lg px-1 py-1 rounded-md min-w-[150px] "
       >
         <div className="flex flex-col items-center gap-2 w-full m-2 justify-around">
           {profileLink}
