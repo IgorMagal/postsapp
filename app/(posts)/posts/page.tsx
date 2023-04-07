@@ -25,22 +25,20 @@ export default function PostsPage() {
     }
   }
   return (
-    <div className="text-center mt-50">
-      <ul className="flex flex-wrap mx-2 my-2">
-        {data?.map((post: IPost) => (
-          <li
-            key={post.id}
-            className="w-full max-w-[50%] xs:max-w-[100%] xs:w-1/1 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/4 grow"
-          >
-            <Post
-              user={post.user}
-              title={post.title}
-              createdAt={post.createdAt}
-              id={post.id}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="flex flex-wrap mt-14">
+      {data?.map((post: IPost) => (
+        <li
+          key={post.id}
+          className="w-full max-w-[50%] xs:max-w-[100%] xs:w-1/1 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/4 grow"
+        >
+          <Post
+            user={post.user}
+            title={post.title}
+            createdAt={post.createdAt}
+            id={post.id}
+          />
+        </li>
+      ))}
+    </ul>
   );
 }

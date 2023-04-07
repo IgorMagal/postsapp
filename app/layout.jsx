@@ -15,7 +15,7 @@ export default async function RootLayout({ children }) {
         <QueryWrapper>
           <AuthContext>
             <MainNav />
-            <section className="fixed top-0 left-0 w-screen h-screen flex flex-col justify-center items-center">
+            <section className="w-auto h-auto flex flex-col justify-start items-center m-2">
               {children}
             </section>
           </AuthContext>
