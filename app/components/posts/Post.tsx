@@ -2,7 +2,7 @@
 import { MdOutlinePerson, MdTextSnippet } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
-import IPost from "@/app/api/models/IPost";
+import IPost from "@/app/models/IPost";
 
 function Post(props: IPost) {
   const { createdAt, id, title, user } = props;
@@ -26,7 +26,9 @@ function Post(props: IPost) {
           </div>
           <p className="font-semibold py-2 align-top italic ">{user.name}</p>
         </div>
-        <p className="italic text-xs py-4 px-3">{createdAt.toString()}</p>
+        <p className="italic text-xs py-4 px-3">
+          {new Date(createdAt).toLocaleDateString()}
+        </p>
       </div>
       <p className="text-neutral-900 p-2 text-justify border-2 border-neutral-300 rounded-md">
         {title}

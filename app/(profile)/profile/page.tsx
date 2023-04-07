@@ -1,8 +1,6 @@
-import LoadingSpinner from "@/app/components/LoadingSpinner";
-
 export default function ProfilePage() {
   return (
-    <div>
+    <div className="mt-24">
       <h1>ProfilePage</h1>
     </div>
   );
