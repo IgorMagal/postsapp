@@ -13,7 +13,7 @@ export default function QueryWrapper({ children }: { children: ReactNode }) {
       <Toaster
         toastOptions={{
           style: {
-            fontWeight: 700,
+            fontWeight: 500,
           },
         }}
         position="bottom-center"
