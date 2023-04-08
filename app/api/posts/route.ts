@@ -1,5 +1,4 @@
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import { getServerSession } from "next-auth";
+
 import prisma from "@/prisma/prisma";
 
 export async function GET(request: Request, response: Response) {

@@ -11,7 +11,7 @@ export default function NewPost() {
   const [comment, setComment] = useState<String>("");
   const [disabled, setDisabled] = useState<Boolean>(false);
   let toastId: string = "toast";
-  const session = useSession();
+  const { data: session } = useSession();
 
   useEffect(() => {
     if (comment.length > 500) {
@@ -53,7 +53,7 @@ export default function NewPost() {
       onSubmit={handleSubmit}
     >
       <div className="text-xl mb-4 font-semibold text-neutral-700">
-        <p>{`Hey ${session.data?.user?.name || "you"},`}</p>
+        <p>{`Hey ${session?.user?.name || "you"},`}</p>
         <p className=" ">{"What's on your mind today?"}</p>
       </div>
       <div className="mb-4">

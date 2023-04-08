@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import prisma from "../../../prisma/prisma";
+import prisma from "@/prisma/prisma";
 
 const adapter = PrismaAdapter(prisma);
 
@@ -23,15 +23,15 @@ export const authOptions = {
   ],
 };
 
-export default NextAuth(authOptions);
+// export default NextAuth(authOptions);
 
-// const handler = NextAuth(authOptions);
-// export {
-//   handler as GET,
-//   handler as POST,
-//   handler as PUT,
-//   handler as PATCH,
-//   handler as DELETE,
-//   handler as HEAD,
-//   handler as OPTIONS,
-// };
+const handler = NextAuth(authOptions);
+export {
+  handler as GET,
+  handler as POST,
+  //   handler as PUT,
+  //   handler as PATCH,
+  //   handler as DELETE,
+  //   handler as HEAD,
+  //   handler as OPTIONS,
+};

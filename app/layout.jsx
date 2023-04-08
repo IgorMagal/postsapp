@@ -1,6 +1,6 @@
 import "./globals.css";
 import MainNav from "./components/nav/MainNav";
-import AuthContext from "./auth/AuthContext";
+import AuthContext from "./api/auth/AuthContext";
 import QueryWrapper from "./components/QueryWrapper";
 
 export const metadata = {
