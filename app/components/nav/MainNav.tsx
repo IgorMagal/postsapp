@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth";
 import Logged from "@/app/components/nav/Logged";
 import NewPostBtn from "./NewPostBtn";
 import PostsBtn from "./PostsBtn";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 export default async function MainNav() {
   const session = await getServerSession(authOptions);
