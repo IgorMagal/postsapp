@@ -15,7 +15,6 @@ export default async function PostsPage() {
   const { data, error, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: posts,
-    initialData: posts,
   });
   if (isLoading) {
     return <Loading />;
