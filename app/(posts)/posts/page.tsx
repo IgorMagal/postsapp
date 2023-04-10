@@ -8,7 +8,7 @@ import Post from "@/app/components/posts/Post";
 import IPost from "@/app/models/IPost";
 
 const posts = async () => {
-  const res = await axios.get("/api/posts");
+  const res = await axios.get("api/posts");
   return res.data;
 };
 export default async function PostsPage() {
@@ -17,6 +17,7 @@ export default async function PostsPage() {
     queryFn: posts,
   });
   if (isLoading) {
+    console.log("Loading from isLoading");
     return <Loading />;
   }
   if (error) {
