@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { MdCancel, MdSave } from "react-icons/md";
@@ -12,6 +12,7 @@ export default function NewPost() {
   const [disabled, setDisabled] = useState<Boolean>(false);
   let toastId: string = "toast";
   const { data: session } = useSession();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     if (comment.length > 500) {
@@ -28,6 +29,7 @@ export default function NewPost() {
         setComment("");
         setDisabled(false);
         console.log(data);
+        queryClient.invalidateQueries({ queryKey: ["posts"] });
         toast.success("Post created successfully", { id: toastId });
       },
       onError: (error) => {
