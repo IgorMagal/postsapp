@@ -11,10 +11,11 @@ const posts = async () => {
   const res = await axios.get("/api/posts");
   return res.data;
 };
-export default function PostsPage() {
+export default async function PostsPage() {
   const { data, error, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: posts,
+    initialData: posts,
   });
   if (isLoading) {
     return <Loading />;
