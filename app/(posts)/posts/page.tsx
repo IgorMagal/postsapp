@@ -13,8 +13,8 @@ const posts = async () => {
 };
 export default async function PostsPage() {
   const { data, error, isLoading } = useQuery({
-    queryKey: ["posts"],
     queryFn: posts,
+    queryKey: ["posts"],
   });
   if (isLoading) {
     console.log("Loading from isLoading");
