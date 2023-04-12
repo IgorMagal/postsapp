@@ -8,8 +8,15 @@ import Post from "@/app/components/posts/Post";
 import IPost from "@/app/models/IPost";
 
 const posts = async () => {
-  const res = await axios.get("/api/posts");
-  return res.data;
+  const res = await fetch("api/posts", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "no-store",
+  });
+  console.log("Fetched");
+  return res.json();
 };
 
 export default function PostsPage() {
