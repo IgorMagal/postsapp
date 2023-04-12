@@ -12,22 +12,24 @@ const posts = async () => {
   return res.data;
 };
 
-export default function PostsPage() {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["posts"],
-    queryFn: posts,
-  });
-  if (isLoading) {
-    return <Loading />;
-  }
-  if (error) {
-    if (error instanceof AxiosError) {
-      toast.error(error?.response?.data);
-    }
-  }
+export default async function PostsPage() {
+  const res = await axios.get("/api/posts");
+
+  // const { data, error, isLoading } = useQuery({
+  //   queryKey: ["posts"],
+  //   queryFn: posts,
+  // });
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
+  // if (error) {
+  //   if (error instanceof AxiosError) {
+  //     toast.error(error?.response?.data);
+  //   }
+  // }
   return (
     <ul className="flex flex-wrap mt-20">
-      {data?.map((post: IPost) => (
+      {res.data?.map((post: IPost) => (
         <li key={post.id}>
           <Post {...post} />
         </li>
