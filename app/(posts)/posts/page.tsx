@@ -28,9 +28,7 @@ export default function PostsPage() {
     return <Loading />;
   }
   if (error) {
-    if (error instanceof AxiosError) {
-      toast.error(error?.response?.data);
-    }
+    toast.error("Unable to load posts, try again later.");
   }
   return (
     <ul className="flex flex-wrap mt-20">
