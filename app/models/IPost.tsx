@@ -1,12 +1,17 @@
 interface IPost {
   id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  title: string;
+  published: boolean;
+  userId: string;
   user: {
     id: string;
     name: string;
-    image: string;
+    email?: string;
+    emailVerified?: Date;
+    image?: string;
   };
-  title: string;
-  createdAt: Date;
 }
 
 export default IPost;

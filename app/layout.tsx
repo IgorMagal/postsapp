@@ -8,12 +8,17 @@ export const metadata = {
   description: "A simple app to manage posts created by Igor Magalhaes",
 };
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
         <QueryWrapper>
           <AuthContext>
+            {/* @ts-expect-error Server Component */}
             <MainNav />
             <section className="w-auto h-auto flex flex-col justify-start items-center m-2">
               {children}

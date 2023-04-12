@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*", "./prisma/*"]
     }
   },
   "include": [
@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/api/auth/routests",
-    "app/layout.jsx"
+    "app/layout.tsx"
   ],
   "exclude": ["node_modules"]
 }
