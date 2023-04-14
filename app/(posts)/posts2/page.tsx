@@ -19,14 +19,12 @@ export default async function PostsPage() {
   const data = await posts();
 
   return (
-    <Suspense fallback={<Loading />}>
-      <ul className="flex flex-wrap mt-20">
-        {data?.map((post: IPost) => (
-          <li key={post.id}>
-            <Post {...post} />
-          </li>
-        ))}
-      </ul>
-    </Suspense>
+    <ul className="flex flex-wrap mt-20">
+      {data?.map((post: IPost) => (
+        <li key={post.id}>
+          <Post {...post} />
+        </li>
+      ))}
+    </ul>
   );
 }
