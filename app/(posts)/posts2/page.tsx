@@ -7,11 +7,9 @@ import { Suspense } from "react";
 
 const posts = async () => {
   const res = await fetch("api/posts", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
+    next: {
+      revalidate: 1,
     },
-    cache: "no-store",
   });
   console.log("Fetched");
   return res.json();
