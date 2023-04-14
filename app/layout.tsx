@@ -2,6 +2,8 @@ import "./globals.css";
 import MainNav from "./components/nav/MainNav";
 import AuthContext from "../pages/api/auth/AuthContext";
 import QueryWrapper from "./components/QueryWrapper";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Posts App",
@@ -21,7 +23,7 @@ export default async function RootLayout({
             {/* @ts-expect-error Server Component */}
             <MainNav />
             <section className="w-auto h-auto flex flex-col justify-start items-center m-2">
-              {children}
+              <Suspense fallback={<Loading />}>{children}</Suspense>
             </section>
           </AuthContext>
         </QueryWrapper>
